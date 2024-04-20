@@ -1,0 +1,62 @@
+---
+import QRCode from "../assets/QRCode.astro";
+import Terminal from "../components/Terminal.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Convocatoria GPC | 2024-01">
+  <div class="flex justify-center items-center py-12">
+    <main class="flex flex-col max-w-screen-md w-full gap-6">
+
+      <Terminal title="requisitos.txt">
+        <ol class="list-decimal list-inside text-lg">
+          <li>Ser estudiante de la <span class="font-bold">facultad de ingeniería</span> de UPC.</li>
+          <li>Tener <span class="font-bold">conocimientos básicos</span> de C++ o Python.</li>
+        </ol>
+      </Terminal>
+
+      <div class="text-center text-white drop-shadow-lg font-bold">
+        <h2 class="text-5xl">Concurso 07 de Junio</h2>
+        <p class="text-xl">Sede Monterrico: 13:00 - 15:00</p>
+      </div>
+
+      <div class="mx-auto">
+        <p class="text-center font-medium text-white mb-2">
+          <span class="hidden lg:inline">Haz click</span>
+          <span class="lg:hidden">Presiona</span> o escanea el siguiente código QR
+        </p>
+        <a 
+          href="https://forms.gle/tdRdwzo3nhnj9HtB6" 
+          aria-label="Abrir formulario de inscripción"
+          target="_blank" 
+          referrerpolicy="no-referrer"
+        >
+          <div class="h-auto max-w-96 hover:scale-95 duration-300">
+            <QRCode />
+          </div>
+        </a>
+      </div>
+
+      <Terminal title="talleres.txt" bodyClass="text-lg">
+        <p>Prepárate para el concurso asistiendo a los siguientes <span class="font-bold">talleres en UPC MONTERRICO</span> en los siguientes horarios.</p>
+        <ul class="list-disc list-inside">
+          <li>
+            <span class="font-bold">1er taller:</span>
+            <time>Sábado 25 de Mayo de 10:00 a 12:00</time>
+          </li>
+          <li>
+            <span class="font-bold">2do taller:</span>
+            <time>Sábado 01 de Junio de 10:00 a 12:00</time>
+          </li>
+        </ul>
+      </Terminal>
+      
+      <Terminal title="beneficios.txt">
+        <p class="text-lg">
+          Al formar parte del GPC podrás aprender más sobre <span class="font-bold">algoritmos</span> y <span class="font-bold">estructuras de datos avanzadas</span>, participar en <span class="font-bold">campamentos</span> de programación y poder participar en <span class="font-bold">concursos internacionales</span> de programación.
+        </p>
+      </Terminal>
+
+    </main>
+  </div>
+</Layout>

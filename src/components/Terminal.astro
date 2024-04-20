@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  iconUrl?: string;
+  bodyClass?: string;
+}
+
+const {title, iconUrl, bodyClass} = Astro.props;
+---
+
+<div class="rounded-xl bg-white drop-shadow-lg">
+  <div class="grid grid-cols-[auto_auto_1fr] bg-[#f0f0f0] rounded-t-xl">
+    <div class="bg-white rounded-tl-xl">
+      <div class="flex w-full bg-[#f0f0f0] rounded-br-lg rounded-tl-xl gap-2 px-4 py-5">
+        <div class="h-4 w-4 bg-[#ff5f57] rounded-full" />
+        <div class="h-4 w-4 bg-[#febc2e] rounded-full" />
+        <div class="h-4 w-4 bg-[#28c840] rounded-full" />
+      </div>
+    </div>
+    <div class="flex justify-center items-center bg-white rounded-t-lg gap-1 px-4 mt-2">
+      <img class="h-5 w-auto" src={iconUrl ?? "/file-icon.png"} alt="text file icon">
+      <h2 class="text-gray-600">{title}</h2>
+    </div>
+    <div class="bg-white rounded-tr-xl">
+      <div class="bg-[#f0f0f0] w-full h-full rounded-bl-lg rounded-tr-xl" />
+    </div>
+  </div>
+
+  <div class:list={["font-mono p-5", bodyClass]}>
+    <slot />
+  </div>
+</div>

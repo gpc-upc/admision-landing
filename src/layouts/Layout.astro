@@ -1,0 +1,34 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Andrés Leiva" />
+    <meta name="description" content="Infórmate sobre cómo participar de la convocatoria de selección para formar parte del GPC." />
+    <meta name="robots" content="index" />
+    <meta name="keywords" content="admisión GPC UPC, programación competitiva upc, GPC UPC" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class:list={[
+    "grid grid-rows-[auto_1fr_auto]",
+    "bg-gradient-to-r from-primary to-secondary",
+    "min-h-screen p-12 lg:p-20 lg:pb-12"
+  ]}>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
